@@ -1,0 +1,22 @@
+{
+  "name": "lxt-ui",
+  "version": "1.0.0",
+  "description": "Ui component library based on vue.js2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/returnMaize/lxt.git"
+  },
+  "keywords": [
+    "lxt"
+  ],
+  "author": "huangjunxian <2650710561@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/returnMaize/lxt/issues"
+  },
+  "homepage": "https://github.com/returnMaize/lxt#readme"
+}
