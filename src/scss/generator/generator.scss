@@ -212,3 +212,26 @@
     vertical-align: $verticalType;
   }
 }
+
+// box-shadow
+@each $x in $box-shadow-offset--hjx {
+  @each $y in $box-shadow-offset--hjx {
+    @each $blur in $box-shadow-offset--hjx {
+      @each $colorKey, $colorValue in $text-bg-color--hjx {
+        .box-shadow-#{ $x }-#{ $y }-#{ $blur }-#{ $colorKey } {
+          box-shadow: $x * $box-shadow-offset-base--hjx 
+          $y * $box-shadow-offset-base--hjx
+          $blur * $box-shadow-offset-base--hjx
+          $colorValue;
+        }
+      }
+    }
+  }
+}
+
+// opacity
+@each $sizeKey, $sizeValue in $opacity-size--hjx {
+  .opacity-#{ $sizeKey } {
+    opacity: $sizeValue;
+  }
+}

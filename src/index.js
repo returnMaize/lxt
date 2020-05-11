@@ -5,14 +5,14 @@ import Link from './components/link/Link.vue'
 
 const components = [Button, Link].map(component => {
   component.install = Vue => {
-    Vue.components(component.name, component)
+    Vue.component(component.name, component)
   }
   return component
 })
 
 const install = Vue => {
   components.forEach(component => {
-    Vue.components(component.name, component)
+    Vue.component(component.name, component)
   })
 }
 
