@@ -1,12 +1,11 @@
 <template>
-  <div class="lxt-button">
-    <button ref="button"
-      :class="finalClass"
-      @mouseenter="buttonMouseenterHandler"
-      @mouseleave="buttonMouseleaveHandler">
-      <slot></slot>
-    </button>
-  </div>
+  <button ref="button"
+    class="lxt-button"
+    :class="finalClass"
+    @mouseenter="buttonMouseenterHandler"
+    @mouseleave="buttonMouseleaveHandler">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -39,14 +38,24 @@ export default {
   },
   computed: {
     finalOption() {
-      return Object.assign({}, this.defaultOption, this.option);
+      return this.parentIsButtonGroup
+        ? this.$parent.finalOption
+        : Object.assign({}, this.defaultOption, this.option);
     },
     finalClass() {
       return this.baseClass.concat(this.optionGenClass);
+    },
+    parentIsButtonGroup() {
+      return this.$parent.$vnode.componentOptions.tag === "lxt-button-group";
     }
   },
   created() {
-    this.genClassByOption();
+    this.optionGenClass = this.genClassByOption();
+  },
+  watch: {
+    option() {
+      this.optionGenClass = this.genClassByOption();
+    }
   },
   methods: {
     genClassByOption() {
@@ -69,7 +78,7 @@ export default {
         case "gardient":
           break;
       }
-      this.optionGenClass = classOfOption;
+      return classOfOption;
     },
     genBaseBySize(size) {
       let base;
