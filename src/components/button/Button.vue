@@ -128,6 +128,10 @@ export default {
           }
           break;
       }
+    },
+    updateOption() {
+      console.log("hehe");
+      this.optionGenClass = this.genClassByOption();
     }
   }
 };

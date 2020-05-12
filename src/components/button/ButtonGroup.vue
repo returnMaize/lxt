@@ -7,6 +7,12 @@
 </template>
 
 <script>
+/*
+option
+  bg: primary | success | danger | warning | dark
+  type: fill
+  size: default | small | large
+*/
 export default {
   name: "lxt-button-group",
   props: {
@@ -42,6 +48,7 @@ export default {
   watch: {
     option() {
       this.optionGenClass = this.genClassByOption();
+      this.$children.forEach(child => child.updateOption());
     }
   },
   methods: {
