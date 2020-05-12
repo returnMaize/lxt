@@ -33,7 +33,7 @@ export default {
         size: "default"
       },
       baseClass: ["cursor-pointer", "no-select", "outline-none"],
-      optionGenClass: []
+      optionOfClass: []
     };
   },
   computed: {
@@ -43,18 +43,18 @@ export default {
         : Object.assign({}, this.defaultOption, this.option);
     },
     finalClass() {
-      return this.baseClass.concat(this.optionGenClass);
+      return this.baseClass.concat(this.optionOfClass);
     },
     parentIsButtonGroup() {
       return this.$parent.$vnode.componentOptions.tag === "lxt-button-group";
     }
   },
   created() {
-    this.optionGenClass = this.genClassByOption();
+    this.optionOfClass = this.genClassByOption();
   },
   watch: {
     finalOption() {
-      this.optionGenClass = this.genClassByOption();
+      this.optionOfClass = this.genClassByOption();
     }
   },
   methods: {
@@ -99,15 +99,15 @@ export default {
       const { type, bg } = this.finalOption;
       switch (type) {
         case "fill":
-          this.optionGenClass.push(`box-shadow-0-5-10-${bg}`);
+          this.optionOfClass.push(`box-shadow-0-5-10-${bg}`);
           break;
 
         case "border":
           {
-            this.optionGenClass = this.optionGenClass.filter(
+            this.optionOfClass = this.optionOfClass.filter(
               name => name !== "bg-white" && name !== `text-${bg}`
             );
-            this.optionGenClass.push("text-white", `bg-${bg}`);
+            this.optionOfClass.push("text-white", `bg-${bg}`);
           }
           break;
       }
@@ -116,15 +116,15 @@ export default {
       const { type, bg } = this.finalOption;
       switch (type) {
         case "fill":
-          this.optionGenClass.pop();
+          this.optionOfClass.pop();
           break;
 
         case "border":
           {
-            this.optionGenClass = this.optionGenClass.filter(
+            this.optionOfClass = this.optionOfClass.filter(
               name => name !== `bg-${bg}` && name !== `text-white`
             );
-            this.optionGenClass.push(`text-${bg}`, "bg-white");
+            this.optionOfClass.push(`text-${bg}`, "bg-white");
           }
           break;
       }

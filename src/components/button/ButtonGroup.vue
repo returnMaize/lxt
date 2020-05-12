@@ -31,7 +31,7 @@ export default {
         size: "default"
       },
       baseClass: ["pos-absolute", "l-0", "t-0", "b-0", "r-0"],
-      optionGenClass: []
+      optionOfClass: []
     };
   },
   computed: {
@@ -39,15 +39,15 @@ export default {
       return Object.assign({}, this.defaultOption, this.option);
     },
     finalClass() {
-      return this.baseClass.concat(this.optionGenClass);
+      return this.baseClass.concat(this.optionOfClass);
     }
   },
   mounted() {
-    this.optionGenClass = this.genClassByOption();
+    this.optionOfClass = this.genClassByOption();
   },
   watch: {
     option() {
-      this.optionGenClass = this.genClassByOption();
+      this.optionOfClass = this.genClassByOption();
     }
   },
   methods: {
