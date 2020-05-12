@@ -2,8 +2,9 @@ import './scss/index.scss'
 
 import Button from './components/button/Button.vue'
 import ButtonGroup from './components/button/ButtonGroup.vue'
+import Input from './components/input/Input.vue'
 
-const components = [Button, ButtonGroup].map(component => {
+const components = [Button, ButtonGroup, Input].map(component => {
   component.install = Vue => {
     Vue.component(component.name, component)
   }
@@ -19,6 +20,7 @@ const install = Vue => {
 export default {
   install,
   Button,
-  ButtonGroup
+  ButtonGroup,
+  Input
 }
 
