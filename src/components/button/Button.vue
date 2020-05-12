@@ -11,7 +11,7 @@
 <script>
 /**
 option
-  bg: primary | success | danger | warning | dark 
+  color: primary | success | danger | warning | dark 
   type: fill | border | gradient 
   size: small | default | large
 */
@@ -29,7 +29,7 @@ export default {
     return {
       defaultOption: {
         type: "fill",
-        bg: "primary",
+        color: "primary",
         size: "default"
       },
       baseClass: ["cursor-pointer", "no-select", "outline-none"],
@@ -59,21 +59,21 @@ export default {
   },
   methods: {
     genClassByOption() {
-      const { type, bg, size } = this.finalOption;
+      const { type, color, size } = this.finalOption;
       let classOfOption,
         baseSize = this.genBaseBySize(size),
         baseClass = [
           `px-${Math.round(28 * baseSize)}`,
           `py-${10 * baseSize}`,
           `border-radius-${Math.round(5 * baseSize)}`,
-          `border-${bg}-1`
+          `border-${color}-1`
         ];
       switch (type) {
         case "fill":
-          classOfOption = [`text-white`, `bg-${bg}`, ...baseClass];
+          classOfOption = [`text-white`, `bg-${color}`, ...baseClass];
           break;
         case "border":
-          classOfOption = [`text-${bg}`, `bg-white`, ...baseClass];
+          classOfOption = [`text-${color}`, `bg-white`, ...baseClass];
           break;
         case "gardient":
           break;
@@ -96,24 +96,24 @@ export default {
       return base;
     },
     buttonMouseenterHandler() {
-      const { type, bg } = this.finalOption;
+      const { type, color } = this.finalOption;
       switch (type) {
         case "fill":
-          this.optionOfClass.push(`box-shadow-0-5-10-${bg}`);
+          this.optionOfClass.push(`box-shadow-0-5-10-${color}`);
           break;
 
         case "border":
           {
             this.optionOfClass = this.optionOfClass.filter(
-              name => name !== "bg-white" && name !== `text-${bg}`
+              name => name !== "bg-white" && name !== `text-${color}`
             );
-            this.optionOfClass.push("text-white", `bg-${bg}`);
+            this.optionOfClass.push("text-white", `bg-${color}`);
           }
           break;
       }
     },
     buttonMouseleaveHandler() {
-      const { type, bg } = this.finalOption;
+      const { type, color } = this.finalOption;
       switch (type) {
         case "fill":
           this.optionOfClass.pop();
@@ -122,9 +122,9 @@ export default {
         case "border":
           {
             this.optionOfClass = this.optionOfClass.filter(
-              name => name !== `bg-${bg}` && name !== `text-white`
+              name => name !== `bg-${color}` && name !== `text-white`
             );
-            this.optionOfClass.push(`text-${bg}`, "bg-white");
+            this.optionOfClass.push(`text-${color}`, "bg-white");
           }
           break;
       }

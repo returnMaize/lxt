@@ -4,6 +4,11 @@
 </template>
 
 <script>
+/*
+option 
+  size: small | default | large
+  color: 
+*/
 export default {
   name: "lxt-input",
   props: {
@@ -15,7 +20,7 @@ export default {
   data() {
     return {
       defaultOption: {},
-      baseClass: ["lxt-input"],
+      baseClass: ["lxt-input", "outline-none"],
       optionOfClass: []
     };
   },
@@ -25,6 +30,14 @@ export default {
     },
     finalClass() {
       return this.baseClass.concat(this.optionOfClass);
+    }
+  },
+  created() {
+    this.optionOfClass = this.genClassByOption();
+  },
+  methods: {
+    genClassByOption() {
+      return [""];
     }
   }
 };

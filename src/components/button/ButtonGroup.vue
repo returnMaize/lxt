@@ -9,7 +9,7 @@
 <script>
 /*
 option
-  bg: primary | success | danger | warning | dark
+  color: primary | success | danger | warning | dark
   type: fill
   size: default | small | large
 */
@@ -27,7 +27,7 @@ export default {
     return {
       defaultOption: {
         type: "fill",
-        bg: "primary",
+        color: "primary",
         size: "default"
       },
       baseClass: ["pos-absolute", "l-0", "t-0", "b-0", "r-0"],
@@ -52,12 +52,12 @@ export default {
   },
   methods: {
     genClassByOption() {
-      const { type, bg, size } = this.finalOption;
+      const { type, color, size } = this.finalOption;
       let buttonGroupClass;
       switch (type) {
         case "fill":
           buttonGroupClass = [
-            `bg-${bg}`,
+            `bg-${color}`,
             `border-radius-${5 * this.genBaseBySize(size)}`
           ];
           break;
