@@ -48,7 +48,6 @@ export default {
   watch: {
     option() {
       this.optionGenClass = this.genClassByOption();
-      this.$children.forEach(child => child.updateOption());
     }
   },
   methods: {

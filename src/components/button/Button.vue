@@ -32,7 +32,7 @@ export default {
         bg: "primary",
         size: "default"
       },
-      baseClass: ["cursor-pointer", "no-select"],
+      baseClass: ["cursor-pointer", "no-select", "outline-none"],
       optionGenClass: []
     };
   },
@@ -53,7 +53,7 @@ export default {
     this.optionGenClass = this.genClassByOption();
   },
   watch: {
-    option() {
+    finalOption() {
       this.optionGenClass = this.genClassByOption();
     }
   },
@@ -128,17 +128,7 @@ export default {
           }
           break;
       }
-    },
-    updateOption() {
-      console.log("hehe");
-      this.optionGenClass = this.genClassByOption();
     }
   }
 };
 </script>
-
-<style scoped>
-button {
-  outline: none;
-}
-</style>
