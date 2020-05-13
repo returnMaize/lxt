@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import mixinGenBaseByOptionSizeMethod from "../../mixins/genBaseByOptionSize";
 /**
 option
   color: primary | success | danger | warning | dark 
@@ -17,6 +18,7 @@ option
 */
 export default {
   name: "lxt-button",
+  mixins: [mixinGenBaseByOptionSizeMethod],
   props: {
     option: {
       type: Object,
@@ -61,7 +63,7 @@ export default {
     genClassByOption() {
       const { type, color, size } = this.finalOption;
       let classOfOption,
-        baseSize = this.genBaseBySize(size),
+        baseSize = this.genBaseByOptionSize(size),
         baseClass = [
           `px-${Math.round(28 * baseSize)}`,
           `py-${10 * baseSize}`,
@@ -79,21 +81,6 @@ export default {
           break;
       }
       return classOfOption;
-    },
-    genBaseBySize(size) {
-      let base;
-      switch (size) {
-        case "default":
-          base = 1;
-          break;
-        case "small":
-          base = 0.8;
-          break;
-        case "large":
-          base = 1.2;
-          break;
-      }
-      return base;
     },
     buttonMouseenterHandler() {
       const { type, color } = this.finalOption;

@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import mixinGenBaseByOptionSizeMethod from "../../mixins/genBaseByOptionSize";
 /*
 option
   color: primary | success | danger | warning | dark
@@ -15,12 +16,10 @@ option
 */
 export default {
   name: "lxt-button-group",
+  mixins: [mixinGenBaseByOptionSizeMethod],
   props: {
     option: {
-      type: Object,
-      default() {
-        return this.defaultOption;
-      }
+      type: Object
     }
   },
   data() {
@@ -58,7 +57,7 @@ export default {
         case "fill":
           buttonGroupClass = [
             `bg-${color}`,
-            `border-radius-${5 * this.genBaseBySize(size)}`
+            `border-radius-${5 * this.genBaseByOptionSize(size)}`
           ];
           break;
 
