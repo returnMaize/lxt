@@ -37,21 +37,34 @@ sByOption -> defaultOption (通过option生成样式类)
 optionAndClassHandler (处理option 和 class)
 ```
 {
-  props: option,
-  data: {
-    optionOfClass
+  props: {
+    option: Object,
+    default () {
+      return this.defaultOption
+    }
+  },
+  data () {
+    return {
+      defaultOption: {},
+      baseClass: [],
+      optionOfClass: []
+    }
   },
   computed: {
-    finalOption,
-    finalClass
+    finalOption () {
+      return Object.assign({}, this.defaultOption, this.option);
+    },
+    finalClass () {
+      return this.baseClass.concat(this.optionOfClass);
+    }
   },
-  created() {
-    this.optionOfClass = this.genClassOption
-    错误处理
-    if (this.defaultOption && this.baseClass) 抛错
+  created () {
+    this.optionOfClass = this.genClassByOption()
   },
   methods: {
-    genClassByOption 抛错 使用了optionAdnClassHandler mixin必须定义genClassByOption
+    genClassByOption () {
+      throw new Error('Used optionAndClassHandler mixin must define genClassByOption method')
+    }
   }
 }
 ```
@@ -59,7 +72,23 @@ optionAndClassHandler (处理option 和 class)
 
 genBaseBySizeMethod (混入genBaseBySize方法)
 ```
-methods: {
-  genBaseBySize
+{
+  methods: {
+    genBaseBySize (size) {
+      let base;
+      switch (size) {
+        case "default":
+          base = 1;
+          break;
+        case "small":
+          base = 0.8;
+          break;
+        case "large":
+          base = 1.2;
+          break;
+      }
+      return base;
+    }
+  }
 }
 ```
