@@ -53,7 +53,7 @@ optionAndClassHandler
   }
 }
 ```
-2. 在组件库中 我们发想许多组件都有size配置参数 组件拿到这个size之后会进行判断得出一个base 之后组件和size相关的样式会乘以这个base完成组件大小的控制
+2. 在组件库中 我们发现许多组件都有size配置参数 组件拿到这个size之后会进行判断得出一个base 之后组件和size相关的样式会乘以这个base完成组件大小的控制
 
 genBaseBySizeHandler
 ```
