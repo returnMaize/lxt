@@ -41,7 +41,7 @@ export default {
       return this.baseClass.concat(this.optionOfClass);
     }
   },
-  mounted() {
+  created() {
     this.optionOfClass = this.genClassByOption();
   },
   watch: {
