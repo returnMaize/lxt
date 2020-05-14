@@ -4,7 +4,7 @@
   "description": "Ui component library based on vue.js2.0",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "addComponent": "node autoAddComponent/index.js"
   },
   "repository": {
     "type": "git",
