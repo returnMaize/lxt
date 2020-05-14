@@ -1,6 +1,7 @@
 <template>
   <input type="text"
-    :class="finalClass">
+    :class="finalClass"
+    :placeholder="finalOption.placeholder">
 </template>
 
 <script>
@@ -21,8 +22,17 @@ export default {
   },
   data() {
     return {
-      defaultOption: {},
-      baseClass: ["lxt-input", "outline-none"],
+      defaultOption: {
+        placeholder: "Placeholder"
+      },
+      baseClass: [
+        "lxt-input",
+        "outline-none",
+        "p-10",
+        "border-default-1",
+        "text-14",
+        "border-radius-5"
+      ],
       optionOfClass: []
     };
   },
@@ -44,3 +54,6 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+</style>
