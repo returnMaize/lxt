@@ -1,6 +1,6 @@
 export default {
   methods: {
-    genBaseByOptionSize (size) {
+    genBaseBySize (size) {
       let base;
       switch (size) {
         case "default":

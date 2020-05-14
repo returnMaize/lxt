@@ -34,28 +34,30 @@ sByOption -> defaultOption (通过option生成样式类)
 ## mixins
 1. 通过以上vue.$options参数 我们可以发现所有组件都需要finalOption finalClass 所以我们把它提取成optionAndClassHandler mixin
 
-optionAndClassHandler
+optionAndClassHandler (处理option 和 class)
 ```
 {
   props: option,
   data: {
-    defaultOption,
-    baseClassOption,
     optionOfClass
   },
   computed: {
     finalOption,
     finalClass
   },
-  created,
+  created() {
+    this.optionOfClass = this.genClassOption
+    错误处理
+    if (this.defaultOption && this.baseClass) 抛错
+  },
   methods: {
-    genClassByOption
+    genClassByOption 抛错 使用了optionAdnClassHandler mixin必须定义genClassByOption
   }
 }
 ```
 2. 在组件库中 我们发现许多组件都有size配置参数 组件拿到这个size之后会进行判断得出一个base 之后组件和size相关的样式会乘以这个base完成组件大小的控制
 
-genBaseBySizeHandler
+genBaseBySizeMethod (混入genBaseBySize方法)
 ```
 methods: {
   genBaseBySize

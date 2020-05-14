@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import mixinGenBaseByOptionSizeMethod from "../../mixins/genBaseByOptionSize";
+import genBaseBySizeMethod from "../../mixins/genBaseBySizeMethod";
 /*
 option 
   size: small | default | large
@@ -13,7 +13,7 @@ option
 */
 export default {
   name: "lxt-input",
-  mixins: [mixinGenBaseByOptionSizeMethod],
+  mixins: [genBaseBySizeMethod],
   props: {
     type: Object,
     default() {

@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import mixinGenBaseByOptionSizeMethod from "../../mixins/genBaseByOptionSize";
+import optionAndClassHandler from "../../mixins/optionAndClassHandler";
+import genBaseBySizeMethod from "../../mixins/genBaseBySizeMethod";
 /*
 option
   color: primary | success | danger | warning | dark
@@ -16,12 +17,7 @@ option
 */
 export default {
   name: "lxt-button-group",
-  mixins: [mixinGenBaseByOptionSizeMethod],
-  props: {
-    option: {
-      type: Object
-    }
-  },
+  mixins: [optionAndClassHandler, genBaseBySizeMethod],
   data() {
     return {
       defaultOption: {
@@ -32,17 +28,6 @@ export default {
       baseClass: ["pos-absolute", "l-0", "t-0", "b-0", "r-0"],
       optionOfClass: []
     };
-  },
-  computed: {
-    finalOption() {
-      return Object.assign({}, this.defaultOption, this.option);
-    },
-    finalClass() {
-      return this.baseClass.concat(this.optionOfClass);
-    }
-  },
-  created() {
-    this.optionOfClass = this.genClassByOption();
   },
   watch: {
     option() {
@@ -57,29 +42,13 @@ export default {
         case "fill":
           buttonGroupClass = [
             `bg-${color}`,
-            `border-radius-${5 * this.genBaseByOptionSize(size)}`
+            `border-radius-${5 * this.genBaseBySize(size)}`
           ];
           break;
-
         case "border":
           break;
       }
       return buttonGroupClass;
-    },
-    genBaseBySize(size) {
-      let base;
-      switch (size) {
-        case "default":
-          base = 1;
-          break;
-        case "small":
-          base = 0.8;
-          break;
-        case "large":
-          base = 1.2;
-          break;
-      }
-      return base;
     }
   }
 };
