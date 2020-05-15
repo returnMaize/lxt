@@ -92,3 +92,15 @@ genBaseBySizeMethod (混入genBaseBySize方法)
   }
 }
 ```
+3. 因为我们的组件配置项是对象类型 而vue监听不到对象属性的添加 所以我们需要一个mixin让option变为响应式
+
+optionReativeHandler
+```
+{
+  watch: {
+    option () {
+      this.optionOfClass = this.genClassByOption();
+    }
+  }
+}
+```

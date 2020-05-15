@@ -9,6 +9,7 @@
 <script>
 import optionAndClassHandler from "../../mixins/optionAndClassHandler";
 import genBaseBySizeMethod from "../../mixins/genBaseBySizeMethod";
+import optionReactiveHandler from "../../mixins/optionReactiveHandler";
 /*
 option
   color: primary | success | danger | warning | dark
@@ -17,7 +18,7 @@ option
 */
 export default {
   name: "lxt-button-group",
-  mixins: [optionAndClassHandler, genBaseBySizeMethod],
+  mixins: [optionAndClassHandler, genBaseBySizeMethod, optionReactiveHandler],
   data() {
     return {
       defaultOption: {
@@ -28,11 +29,6 @@ export default {
       baseClass: ["pos-absolute", "l-0", "t-0", "b-0", "r-0"],
       optionOfClass: []
     };
-  },
-  watch: {
-    option() {
-      this.optionOfClass = this.genClassByOption();
-    }
   },
   methods: {
     genClassByOption() {

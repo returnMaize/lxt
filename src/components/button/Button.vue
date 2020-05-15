@@ -10,6 +10,7 @@
 
 <script>
 import genBaseByOptionMethod from "../../mixins/genBaseBySizeMethod";
+import optionReactiveHandler from "../../mixins/optionReactiveHandler";
 /**
 option
   color: primary | success | danger | warning | dark 
@@ -18,7 +19,7 @@ option
 */
 export default {
   name: "lxt-button",
-  mixins: [genBaseByOptionMethod],
+  mixins: [genBaseByOptionMethod, optionReactiveHandler],
   props: {
     option: {
       type: Object,
@@ -53,11 +54,6 @@ export default {
   },
   created() {
     this.optionOfClass = this.genClassByOption();
-  },
-  watch: {
-    // finalOption() {
-    //   this.optionOfClass = this.genClassByOption();
-    // }
   },
   methods: {
     genClassByOption() {
