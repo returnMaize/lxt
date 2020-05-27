@@ -1,3 +1,5 @@
+import './scss/index.scss'
+
 import Alert from './components/alert/Alert'
 import Avatar from './components/avatar/Avatar'
 
