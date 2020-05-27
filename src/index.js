@@ -1,3 +1,4 @@
+import './font/iconfont.css'
 import './scss/index.scss'
 
 import Alert from './components/alert/Alert'
