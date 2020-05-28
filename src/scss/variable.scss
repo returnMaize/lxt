@@ -1,10 +1,10 @@
 /* Lxt Variables */
 
 // Color
-$--color-primary: #0442f1 !default;
 $--color-white: #ffffff;
 $--color-black: #000000;
 
+$--color-primary: #0400fb !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
@@ -16,8 +16,48 @@ $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
 
 $--color-success: #28c76f !default;
+$--color-success-light-1: mix($--color-white, $--color-success, 10%) !default;
+$--color-success-light-2: mix($--color-white, $--color-success, 20%) !default;
+$--color-success-light-3: mix($--color-white, $--color-success, 30%) !default;
+$--color-success-light-4: mix($--color-white, $--color-success, 40%) !default;
+$--color-success-light-5: mix($--color-white, $--color-success, 50%) !default;
+$--color-success-light-6: mix($--color-white, $--color-success, 60%) !default;
+$--color-success-light-7: mix($--color-white, $--color-success, 70%) !default;
+$--color-success-light-8: mix($--color-white, $--color-success, 80%) !default;
+$--color-success-light-9: mix($--color-white, $--color-success, 90%) !default;
+
+
 $--color-danger: #ea5455 !default;
+$--color-danger-light-1: mix($--color-white, $--color-danger, 10%) !default;
+$--color-danger-light-2: mix($--color-white, $--color-danger, 20%) !default;
+$--color-danger-light-3: mix($--color-white, $--color-danger, 30%) !default;
+$--color-danger-light-4: mix($--color-white, $--color-danger, 40%) !default;
+$--color-danger-light-5: mix($--color-white, $--color-danger, 50%) !default;
+$--color-danger-light-6: mix($--color-white, $--color-danger, 60%) !default;
+$--color-danger-light-7: mix($--color-white, $--color-danger, 70%) !default;
+$--color-danger-light-8: mix($--color-white, $--color-danger, 80%) !default;
+$--color-danger-light-9: mix($--color-white, $--color-danger, 90%) !default;
+
 $--color-warning: #ff9f43 !default;
+$--color-warning-light-1: mix($--color-white, $--color-warning, 10%) !default;
+$--color-warning-light-2: mix($--color-white, $--color-warning, 20%) !default;
+$--color-warning-light-3: mix($--color-white, $--color-warning, 30%) !default;
+$--color-warning-light-4: mix($--color-white, $--color-warning, 40%) !default;
+$--color-warning-light-5: mix($--color-white, $--color-warning, 50%) !default;
+$--color-warning-light-6: mix($--color-white, $--color-warning, 60%) !default;
+$--color-warning-light-7: mix($--color-white, $--color-warning, 70%) !default;
+$--color-warning-light-8: mix($--color-white, $--color-warning, 80%) !default;
+$--color-warning-light-9: mix($--color-white, $--color-warning, 90%) !default;
+
 $--color-dark: #1e1e1e !default;
+$--color-dark-light-1: mix($--color-white, $--color-dark, 10%) !default;
+$--color-dark-light-2: mix($--color-white, $--color-dark, 20%) !default;
+$--color-dark-light-3: mix($--color-white, $--color-dark, 30%) !default;
+$--color-dark-light-4: mix($--color-white, $--color-dark, 40%) !default;
+$--color-dark-light-5: mix($--color-white, $--color-dark, 50%) !default;
+$--color-dark-light-6: mix($--color-white, $--color-dark, 60%) !default;
+$--color-dark-light-7: mix($--color-white, $--color-dark, 70%) !default;
+$--color-dark-light-8: mix($--color-white, $--color-dark, 80%) !default;
+$--color-dark-light-9: mix($--color-white, $--color-dark, 90%) !default;
 
 
