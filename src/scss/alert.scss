@@ -6,7 +6,7 @@
   position: relative;
 }
 
-$colorArr: (
+$typeObj: (
   primary: ($--color-primary, $--color-primary-light-7),
   success: ($--color-success, $--color-success-light-7),
   danger: ($--color-danger, $--color-danger-light-7),
@@ -14,11 +14,11 @@ $colorArr: (
   dark: ($--color-dark, $--color-dark-light-7)
 );
 
-@each $key, $value in $colorArr {
-  .lxt-alert__#{ $key } {
+@each $type, $typeArr in $typeObj {
+  .lxt-alert__#{ $type } {
     @include common-style;
-    color: nth($value, 1);
-    background-color: nth($value, 2);
+    color: nth($typeArr, 1);
+    background-color: nth($typeArr, 2);
   }
 }
 
