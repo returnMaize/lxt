@@ -9,34 +9,20 @@
   
 }
 
-.lxt-alert__primary {
-  @include common-style;
-  background-color: $--color-primary-light-7;
-  color: $--color-primary;
-}
+$colorArr: (
+  primary: ($--color-primary, $--color-primary-light-7),
+  success: ($--color-success, $--color-success-light-7),
+  danger: ($--color-danger, $--color-danger-light-7),
+  warning: ($--color-warning, $--color-warning-light-7),
+  dark: ($--color-dark, $--color-dark-light-7)
+);
 
-.lxt-alert__success {
-  @include common-style;
-  background-color: $--color-success-light-7;
-  color: $--color-success;
-}
-
-.lxt-alert__danger {
-  @include common-style;
-  background-color: $--color-danger-light-7;
-  color: $--color-danger;
-}
-
-.lxt-alert__warning {
-  @include common-style;
-  background-color: $--color-warning-light-7;
-  color: $--color-warning;
-}
-
-.lxt-alert__dark {
-  @include common-style;
-  background-color: $--color-dark-light-7;
-  color: $--color-dark;
+@each $key, $value in $colorArr {
+  .lxt-alert__#{ $key } {
+    @include common-style;
+    color: nth($value, 1);
+    background-color: nth($value, 2);
+  }
 }
 
 .lxt-alert__content {
