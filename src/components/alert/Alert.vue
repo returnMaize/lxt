@@ -1,5 +1,6 @@
 <template>
-  <div :class="mainClassArr">
+  <div :class="mainClassArr"
+    v-if="isShowAlert">
     <slot name="icon">
       <i :class="iconClassArr"></i>
     </slot>
@@ -7,6 +8,10 @@
     <span class="lxt-alert__content">
       <slot name="default"></slot>
     </span>
+
+    <i v-if="close"
+      class="iconfont lxt-shanchu1 lxt-alert__close"
+      @click="isShowAlert = false"></i>
   </div>
 </template>
 
@@ -21,7 +26,17 @@ export default {
     },
     icon: {
       type: String
+    },
+    close: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  data() {
+    return {
+      isShowAlert: true
+    };
   },
 
   computed: {

@@ -1,47 +1,50 @@
 @import './variable.scss';
 
-@mixin spacing {
+@mixin common-style {
   padding: 10px;
+  border-radius: 5px;
+  position: relative;
 }
 @mixin border-radius {
-  border-radius: 5px;
+  
 }
 
 .lxt-alert__primary {
-  @include spacing;
-  @include border-radius;
+  @include common-style;
   background-color: $--color-primary-light-7;
   color: $--color-primary;
 }
 
 .lxt-alert__success {
-  @include spacing;
-  @include border-radius;
+  @include common-style;
   background-color: $--color-success-light-7;
   color: $--color-success;
 }
 
 .lxt-alert__danger {
-  @include spacing;
-  @include border-radius;
+  @include common-style;
   background-color: $--color-danger-light-7;
   color: $--color-danger;
 }
 
 .lxt-alert__warning {
-  @include spacing;
-  @include border-radius;
+  @include common-style;
   background-color: $--color-warning-light-7;
   color: $--color-warning;
 }
 
 .lxt-alert__dark {
-  @include spacing;
-  @include border-radius;
+  @include common-style;
   background-color: $--color-dark-light-7;
   color: $--color-dark;
 }
 
 .lxt-alert__content {
   padding-left: 5px;
+}
+
+.lxt-alert__close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
