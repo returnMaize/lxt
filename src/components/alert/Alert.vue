@@ -1,8 +1,8 @@
 <template>
-  <div :class="mainClassArr"
+  <div :class="[`lxt-alert__${type}`]"
     v-if="isShowAlert">
     <slot name="icon">
-      <i :class="iconClassArr"></i>
+      <i :class="['iconfont', icon]"></i>
     </slot>
 
     <span class="lxt-alert__content">
@@ -37,20 +37,6 @@ export default {
     return {
       isShowAlert: true
     };
-  },
-
-  computed: {
-    mainClassArr() {
-      const arr = [];
-      const { type } = this;
-      return arr.concat(`lxt-alert__${type}`);
-    },
-    iconClassArr() {
-      const arr = ["iconfont"];
-      const { icon } = this;
-      arr.push(icon);
-      return arr.concat(icon);
-    }
   }
 };
 </script>
