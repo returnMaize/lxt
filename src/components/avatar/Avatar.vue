@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <slot></slot>
+  <div :class="[`lxt-avatar__${ size }__${ color }__${ textColor }`]">
+    <slot>{{ text }}</slot>
   </div>
 </template>
 
