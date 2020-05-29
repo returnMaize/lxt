@@ -5,9 +5,6 @@
   border-radius: 5px;
   position: relative;
 }
-@mixin border-radius {
-  
-}
 
 $colorArr: (
   primary: ($--color-primary, $--color-primary-light-7),
