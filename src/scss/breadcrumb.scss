@@ -1,0 +1,19 @@
+@import './variable.scss';
+
+.lxt-breadcrumb {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 14px;
+}
+
+.lxt-breadcrumb li {
+  list-style-type: none;
+  cursor: pointer;
+  color: $--color-gray;
+  user-select: none;
+}
+
+.router-link-active {
+  color: $--color-primary;
+}

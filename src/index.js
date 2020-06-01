@@ -3,8 +3,9 @@ import './scss/index.scss'
 
 import Alert from './components/alert/Alert'
 import Avatar from './components/avatar/Avatar'
+import Breadcrumb from './components/breadcrumb/Breadcrumb'
 
-const compoents = [Alert, Avatar].map(component => {
+const compoents = [Alert, Avatar, Breadcrumb].map(component => {
   component.install = Vue => {
     Vue.component(component.name, component)
   }
@@ -20,5 +21,6 @@ const install = Vue => {
 export default {
   install,
   Alert,
-  Avatar
+  Avatar,
+  Breadcrumb
 }
