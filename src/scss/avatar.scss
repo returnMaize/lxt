@@ -1,9 +1,29 @@
 $size: (
-  'small': (/*width height*/20px, /*radius*/10px),
-  'nomal': (/*width height*/20px, /*radius*/10px),
-  'large': (/*width height*/20px, /*radius*/10px),
+  'small': (/*width height*/24px, /*radius*/12px, /*font-size*/12px),
+  'normal': (/*width height*/50px, /*radius*/25px, /*font-size*/14px),
+  'large': (/*width height*/70px, /*radius*/35px, /*font-size*/16px),
 );
 
 $color: (
-  'primary': $--color-primary
-)
+  'primary': $--color-primary-light-1,
+  'success': $--color-success-light-1,
+  'warning': $--color-warning-light-1,
+  'danger': $--color-danger-light-1,
+  'dark': $--color-dark-light-1
+);
+
+@each $colorKey, $colorValue in $color {
+  @each $sizeKey, $sizeValue in $size {
+    .lxt-avatar__#{ $sizeKey }__#{ $colorKey } {
+      color: white;
+      background-color: $colorValue;
+      width: nth($sizeValue, 1);
+      height: nth($sizeValue, 1);
+      border-radius: nth($sizeValue, 2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: nth($sizeValue, 3);
+    }
+  }
+}
