@@ -6,7 +6,7 @@
     </slot>
 
     <span class="lxt-alert__content">
-      <slot name="default"></slot>
+      <slot name="default">{{ text }}</slot>
     </span>
 
     <i v-if="close"
@@ -30,6 +30,10 @@ export default {
     close: {
       type: Boolean,
       default: false
+    },
+    text: {
+      type: String,
+      default: "Thank you for using lxt component library"
     }
   },
 
