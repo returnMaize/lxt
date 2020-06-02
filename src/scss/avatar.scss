@@ -5,11 +5,11 @@ $size: (
 );
 
 $color: (
-  'primary': $--color-primary-light-1,
-  'success': $--color-success-light-1,
-  'warning': $--color-warning-light-1,
-  'danger': $--color-danger-light-1,
-  'dark': $--color-dark-light-1
+  'primary': $--color-primary,
+  'success': $--color-success,
+  'warning': $--color-warning,
+  'danger': $--color-danger,
+  'dark': $--color-dark
 );
 
 @each $colorKey, $colorValue in $color {

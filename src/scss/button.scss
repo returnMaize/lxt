@@ -1,0 +1,47 @@
+@import './variable.scss';
+
+$typeArr: (filled, border, gradient);
+
+$color: (
+  primary: $--color-primary,
+  success: $--color-success,
+  danger: $--color-danger,
+  warning: $--color-warning,
+  dark: $--color-dark
+);
+
+$size: (
+  large: (/*p-y*/14px, /*p-x*/35px, /*radius*/6px, /*font-size*/17.5px),
+  normal: (/*p-y*/10.5px, /*p-x*/28px, /*radius*/5px, /*font-size*/14px),
+  small: (/*p-y*/7px, /*p-x*/21px, /*radius*/4px, /*font-size*/12px)
+);
+
+@each $type in $typeArr {
+  @each $sizeKey, $sizeValue in $size {
+    @each $colorKey, $colorValue in $color {
+      // filled
+      @if $type == filled {
+        .lxt-button__filled__#{ $colorKey }__#{ $sizeKey } {
+          display: inline-block;
+          font-size: nth($sizeValue, 4);
+          padding: nth($sizeValue, 1) nth($sizeValue, 2);
+          border-radius: nth($sizeValue, 3);
+          background-color: $colorValue;
+          color: white;
+        }
+      }
+
+      // border
+      @if $type == border {
+
+      }
+
+      // gradient
+      @if $type == gradient {
+
+      }
+    }
+  }
+}
+
+// lxt-button__filled__primary__normal
