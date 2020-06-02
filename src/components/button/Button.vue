@@ -1,5 +1,6 @@
 <template>
-  <div :class="`lxt-button__${ type }__${ color }__${ size }`">
+  <div :class="`lxt-button__${ type }__${ color }__${ size }`"
+    v-on="$listeners">
     <slot></slot>
   </div>
 </template>
