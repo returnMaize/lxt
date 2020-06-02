@@ -3,11 +3,11 @@
 $typeArr: (filled, border, gradient);
 
 $color: (
-  primary: $--color-primary,
-  success: $--color-success,
-  danger: $--color-danger,
-  warning: $--color-warning,
-  dark: $--color-dark
+  primary: ($--color-primary, $--color-primary-light-9),
+  success: ($--color-success, $--color-success-light-9),
+  danger: ($--color-danger, $--color-danger-light-9),
+  warning: ($--color-warning, $--color-warning-light-9),
+  dark: ($--color-dark, $--color-dark-light-9),
 );
 
 $size: (
@@ -16,24 +16,44 @@ $size: (
   small: (/*p-y*/7px, /*p-x*/21px, /*radius*/4px, /*font-size*/12px)
 );
 
+@mixin button-common-style {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
 @each $type in $typeArr {
   @each $sizeKey, $sizeValue in $size {
     @each $colorKey, $colorValue in $color {
       // filled
       @if $type == filled {
         .lxt-button__filled__#{ $colorKey }__#{ $sizeKey } {
-          display: inline-block;
+          @include button-common-style;
           font-size: nth($sizeValue, 4);
           padding: nth($sizeValue, 1) nth($sizeValue, 2);
           border-radius: nth($sizeValue, 3);
-          background-color: $colorValue;
+          background-color: nth($colorValue, 1);
           color: white;
+          &:hover {
+            box-shadow: 0px 5px 10px nth($colorValue, 1);
+          }
         }
       }
 
       // border
       @if $type == border {
-
+        .lxt-button__border__#{ $colorKey }__#{ $sizeKey } {
+          @include button-common-style;
+          font-size: nth($sizeValue, 4);
+          padding: nth($sizeValue, 1) nth($sizeValue, 2);
+          border-radius: nth($sizeValue, 3);
+          color: nth($colorValue, 1);
+          border: 1px solid nth($colorValue, 1);
+          box-sizing: border-box;
+          &:hover {
+            background-color: nth($colorValue, 2);
+          }
+        }
       }
 
       // gradient
