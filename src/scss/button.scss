@@ -58,7 +58,17 @@ $size: (
 
       // gradient
       @if $type == gradient {
-
+        .lxt-button__gradient__#{ $colorKey }__#{ $sizeKey } {
+          @include button-common-style;
+          font-size: nth($sizeValue, 4);
+          padding: nth($sizeValue, 1) nth($sizeValue, 2);
+          border-radius: nth($sizeValue, 3);
+          background: linear-gradient(to right top, nth($colorValue, 1), 80%, nth($colorValue, 2));
+          color: white;
+          &:hover {
+            transform: translateY(-3px);
+          }
+        }
       }
     }
   }
